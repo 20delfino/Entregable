@@ -75,7 +75,7 @@ def buscar_usuario(request):
 
     return render(request, 'Inmobiliaria/buscar_usuario.html')
 
-def mostrar_usuario(request):
-     usuario = request.GET["user"] 
-     resultado = Usuario.objects.filter(nombre__iexact= usuario) 
-     return render(request, 'Inmobiliaria/resultado.html', {{"resultado":resultado}})
+def resultado_busqueda(request):
+     usuario = request.GET["usuario"] 
+     resultado = Usuario.objects.filter(nombre__iexact=usuario) 
+     return render(request, 'Inmobiliaria/resultado.html', {"resultado":resultado})
